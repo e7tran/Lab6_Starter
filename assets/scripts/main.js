@@ -65,8 +65,7 @@ function saveRecipesToStorage(recipes) {
   //            header. It is possible in only a single line, but should
   //            be no more than a few lines.
 
-  let srecipes = recipes.toString();
-  localStorage.setItem('recipes', srecipes);
+  localStorage.setItem('recipes', JSON.stringify(recipes));
 }
 
 /**
@@ -102,7 +101,7 @@ function initFormHandler() {
   // B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
   //            then save the recipes array back to localStorage
     let recipear = getRecipesFromStorage();
-    recipear.appendChild(recipeEl);
+    recipear.push(recipeEl);
     saveRecipesToStorage(recipear);
   });
   
