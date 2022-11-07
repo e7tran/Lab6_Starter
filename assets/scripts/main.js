@@ -90,19 +90,19 @@ function initFormHandler() {
   //            make this easier to read), and then extract the keys and corresponding
   //            values from the FormData object and insert them into recipeObject
     let newO =  new Object();
-    for (let key of formdata1) {
-      newO[key] = formdata1[key];
+    for (let [key, val] of formdata1.entries()) {
+      newO[key] = val;
     }
   // B6. TODO - Create a new <recipe-card> element
     let recipeEl = document.createElement('recipe-card');
   // B7. TODO - Add the recipeObject data to <recipe-card> using element.data
     recipeEl.data = newO;
   // B8. TODO - Append this new <recipe-card> to <main>
-    document.querySelector('main').append(recipeEl)
+    document.querySelector('main').appendChild(recipeEl)
   // B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
   //            then save the recipes array back to localStorage
     let recipear = getRecipesFromStorage();
-    recipear.append(recipeEl);
+    recipear.appendChild(recipeEl);
     saveRecipesToStorage(recipear);
   });
   
