@@ -76,14 +76,11 @@ function initFormHandler() {
 
   // B2. TODO - Get a reference to the <form> element
   let formEl = document.querySelector('form');
-  console.log("This is the form element");
-  console.log(formEl);
   // B3. TODO - Add an event listener for the 'submit' event, which fires when the
   //            submit button is clicked
   formEl.addEventListener("submit", (event) => {
   // Steps B4-B9 will occur inside the event listener from step B3
   // B4. TODO - Create a new FormData object from the <form> element reference above
-    console.log("In the event");
     const formdata1 = new FormData(formEl);
   // B5. TODO - Create an empty object (I'll refer to this object as recipeObject to
   //            make this easier to read), and then extract the keys and corresponding
